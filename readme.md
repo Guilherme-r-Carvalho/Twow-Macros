@@ -13,10 +13,10 @@
 
 ### Paladin
 Retribution Paladin Macros:
-[RetPalaMacros](https://github.com/Guilherme-r-Carvalho/Twow-Macros/blob/main/RetPaladinMacros.md)
+[Retribution Paladin Macros](https://github.com/Guilherme-r-Carvalho/Twow-Macros/blob/main/RetPaladinMacros.md)
 
 Protection Paladin Macros:
-  WIP
+[Protection Paladin Macros](https://github.com/Guilherme-r-Carvalho/Twow-Macros/blob/main/ProtPaladinMacros.md)
 
 Holy Paladin Macros: 
  ... i don't play holy, wip. look into the other macros and see if anything is usefull.
