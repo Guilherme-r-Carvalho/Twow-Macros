@@ -1,6 +1,6 @@
 # Ret Paladin Macros
-## Make sure you have [CleveRoidMacros](https://github.com/bhhandley/CleveRoidMacros)(Custom functions) and [SuperMacro](https://github.com/Monteo/SuperMacro)(Size extender) installed as they are needed to work.
-### This are the macros I am currently using, feel free to change them as you like as this should be used as a start up to make your ones. If you have any questions, message me on discord @unlifed.
+### Make sure you have [CleveRoidMacros](https://github.com/bhhandley/CleveRoidMacros)(Custom functions) and [SuperMacro](https://github.com/Monteo/SuperMacro)(Size extender) installed as they are needed to work.
+#### This are the macros I am currently using, feel free to change them as you like as this should be used as a start up to make your ones. If you have any questions, message me on discord @unlifed.
 ## Index
  1. [Rotations](#rotations)
  2. [Seals](#seals)
@@ -50,8 +50,17 @@ Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana abo
 /cast [hp:<20] Hammer of Wrath
 /cast Crusader Strike
 ```
+### Powerfull Self Cleanse 
+
+This will bubble and unbubble you so you clean debuffs that can't be decursed.(needs to be spammed/will put DS on 5min cd)
+```
+/cast Divine Shield
+/unbuff Divine Shield
+/retarget
+/startattack
+```
 ---
-## Seals
+## Seals | Seal Priority -> Wisdom,Crusader,Light
 ### Wisdom Seal
 Seal and Judge Wisdom, Reseal and Judge Command while target has JoW.
 ```
@@ -62,6 +71,17 @@ Seal and Judge Wisdom, Reseal and Judge Command while target has JoW.
 /cast [nocdgcd] Judgement
 /cast [nocdgcd] !Seal of Command
 /cast Judgement
+```
+### Mana
+
+Seal and Judge Wisdom, Reseal Wisdom and keep it up for fast mana recovery
+```
+#showtooltip
+/retarget
+/startattack
+/cast [nodebuff:"Judgement of Wisdom"] !Seal of Wisdom
+/cast [nodebuff:"Judgement of Wisdom"] Judgement
+/cast !Seal of Wisdom
 ```
 ### Light Seal
 Seal and Judge Light, Reseal and Judge Command while target has JoL.
