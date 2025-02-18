@@ -5,7 +5,7 @@
 1. [WIP](#wip)
 2. [Paladin](#paladin)
  
-#### WIP
+### WIP
 - [x] Retribution Paladin Macros
 - [ ] Prot Paladin Macros
 - [ ] Holy Paladin Macros

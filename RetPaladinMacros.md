@@ -13,17 +13,17 @@
 Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 45%, cast Exorcism on cooldown, Hammer of Wrath when available.
 ```
 #showtooltip
-/script UIErrorsFrame:Hide()    <-- Only use this if you dont want those spam messages saying "This ability is not ready yet"
+/script UIErrorsFrame:Hide()
 /retarget
 /startattack
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas", hp:>60] Repentance
+/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
 /cast ?[type:boss] Repentance
-/cast [mybuff:"Zeal"<#3/"Zeal"<7] Crusader Strike
+/use ?[type:boss,mybuff:Zeal>#2] 19343
+/cast [mybuff:Zeal<#3/Zeal<7] Crusader Strike
 /cast [mybuff:"Holy Might"<5] Holy Strike
 /cast [mypower:>45] Consecration
 /cast ?[mypower:<70] Quel'dorei Meditation
 /cast [type:undead] Exorcism
-/cast [hp:<20] Hammer of Wrath
 /cast Crusader Strike
 ```
 
@@ -37,17 +37,15 @@ Example to use trinket slot:
 Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 15%, cast Holy Wrath on cooldown, Hammer of Wrath when available.
 ```
 #showtooltip
-/script UIErrorsFrame:Hide()    <-- Only use this if you dont want those spam messages saying "This ability is not ready yet"
+/script UIErrorsFrame:Hide()
 /retarget
 /startattack
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas", hp:>60] Repentance
+/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
 /cast ?[type:boss] Repentance
 /cast [mybuff:"Zeal"<#3/"Zeal"<7] Crusader Strike
 /cast [mybuff:"Holy Might"<5] Holy Strike
 /cast [mypower:>15] Consecration
 /cast ?[mypower:<70] Quel'dorei Meditation
-/cast [type:undead] Holy Wrath
-/cast [hp:<20] Hammer of Wrath
 /cast Crusader Strike
 ```
 ### Powerfull Self Cleanse 
@@ -111,12 +109,15 @@ Make sure your Crusader seal macro is named **"Crusader"**
 This will make sure you are not sealing crusader when ur targets are on low health(usually happens when trash clearing) and that even on low mana you will have Command up with **Rank 1** to waste less mana.
 ```
 #showtooltip
+/cast [mybuff:"Righteous Fury"] Righteous Fury
 /retarget
 /startattack
 /cast ?[type:boss] {Crusader}
-/cast ?[hp:>65, mypower:>40] {Crusader}
-/cast [debuff:"Judgement of Wisdom"] !Seal of Command
-/cast [nodebuff:"Judgement of Wisdom"] !Seal of Command(Rank 1)
+/cast ?[hp:>65, mypower:>30] {Crusader}
+/cast [nocooldown] Judgement
+/cast [notype:boss,debuff:"Judgement of Wisdom",nomybuff:"Seal of the Crusader"] !Seal of Command
+/cast [notype:boss,nodebuff:"Judgement of Wisdom", nomybuff:"Seal of the Crusader"] !Seal of Command(Rank 1)
+/cast [type:boss,hp:<20,mypower:>15] Hammer of Wrath
 /cast Judgement
 ```
 
