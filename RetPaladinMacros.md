@@ -1,6 +1,11 @@
 # Ret Paladin Macros
 ## Make sure you have [CleveRoidMacros](https://github.com/bhhandley/CleveRoidMacros)(Custom functions) and [SuperMacro](https://github.com/Monteo/SuperMacro)(Size extender) installed as they are needed to work.
 ### This are the macros I am currently using, feel free to change them as you like as this should be used as a start up to make your ones. If you have any questions, message me on discord @unlifed.
+## Index
+ 1. [Rotations](#rotations)
+ 2. [Seals](#seals)
+ 3. [Consumables](#consumables)
+
 ## Rotations
 ### Auto Attack - Single Target
 **!Only use Quel'dorei Meditation if you are High Elf.**
@@ -8,7 +13,7 @@
 Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 45%, cast Exorcism on cooldown, Hammer of Wrath when available.
 ```
 #showtooltip
-/script UIErrorsFrame:Hide()
+/script UIErrorsFrame:Hide()    <-- Only use this if you dont want those spam messages saying "This ability is not ready yet"
 /retarget
 /startattack
 /cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas", hp:>60] Repentance
@@ -32,7 +37,7 @@ Example to use trinket slot:
 Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 15%, cast Holy Wrath on cooldown, Hammer of Wrath when available.
 ```
 #showtooltip
-/script UIErrorsFrame:Hide()
+/script UIErrorsFrame:Hide()    <-- Only use this if you dont want those spam messages saying "This ability is not ready yet"
 /retarget
 /startattack
 /cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas", hp:>60] Repentance
@@ -98,9 +103,9 @@ This will make sure you are not sealing crusader when ur targets are on low heal
 ### Righteousness 
 #### Spelladin is dead, stop trying it. >:|
 
-## Consummables
+## Consumables
 
-You can increase the list of consummes you want to use, since paladin benefits from both melee and spell power bonus. Make sure to search the itemID in the database and add it.
+You can increase the list of consumes you want to use, since paladin benefits from both melee and spell power bonus. Make sure to search the itemID in the database and add it.
 Right now the buff present on this list are:
 - Spirit of Zanza
 - Elixir of the Mongoose
