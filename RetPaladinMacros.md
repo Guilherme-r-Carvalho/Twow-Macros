@@ -16,15 +16,15 @@ Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana abo
 /script UIErrorsFrame:Hide()
 /retarget
 /startattack
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
-/cast ?[type:boss] Repentance
-/use ?[type:boss,mybuff:Zeal>#2] 19343
 /cast [mybuff:Zeal<#3/Zeal<7] Crusader Strike
 /cast [mybuff:"Holy Might"<5] Holy Strike
+/cast Crusader Strike
+/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
+/cast ?[type:boss] Repentance
 /cast [mypower:>45] Consecration
 /cast ?[mypower:<70] Quel'dorei Meditation
 /cast [type:undead] Exorcism
-/cast Crusader Strike
+
 ```
 
 ```
@@ -40,13 +40,13 @@ Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana abo
 /script UIErrorsFrame:Hide()
 /retarget
 /startattack
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
-/cast ?[type:boss] Repentance
 /cast [mybuff:"Zeal"<#3/"Zeal"<7] Crusader Strike
 /cast [mybuff:"Holy Might"<5] Holy Strike
-/cast [mypower:>15] Consecration
-/cast ?[mypower:<70] Quel'dorei Meditation
 /cast Crusader Strike
+/cast [mypower:>15] Consecration
+/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
+/cast ?[type:boss] Repentance
+/cast ?[mypower:<70] Quel'dorei Meditation
 ```
 ### Powerfull Self Cleanse 
 
@@ -117,8 +117,8 @@ This will make sure you are not sealing crusader when ur targets are on low heal
 /cast [nocooldown] Judgement
 /cast [notype:boss,debuff:"Judgement of Wisdom",nomybuff:"Seal of the Crusader"] !Seal of Command
 /cast [notype:boss,nodebuff:"Judgement of Wisdom", nomybuff:"Seal of the Crusader"] !Seal of Command(Rank 1)
-/cast [type:boss,hp:<20,mypower:>15] Hammer of Wrath
 /cast Judgement
+/cast [type:boss,hp:<20,mypower:>15] Hammer of Wrath
 ```
 
 ### Righteousness 
@@ -130,23 +130,25 @@ You can increase the list of consumes you want to use, since paladin benefits fr
 Right now the buff present on this list are:
 - Spirit of Zanza
 - Elixir of the Mongoose
+- Dense Sharpening Stone
 - Juju Power(Elixir of the Giants if no Juju Power in inventory)
 - Winterfall Firewater(Juju Might if no Winterfall Firewater in inventory)
+- Elixir fo Fortitude
 - R.O.I.D.S
-- Dense Sharpening Stone
 - Power Mushroom
 - Dreamtonic
 ```
 #showtooltip
 /use [nomybuff:"Spirit of Zanza"] 20079
 /use [nomybuff:"Elixir of the Mongoose"] 13452
+/use ?[nomybuff:"Sharpen Blade V"] 12404
+/run PickupInventoryItem(16)
 /use [nomybuff:"Juju Power"] 12451
 /use [nomybuff:"Juju Power"/"Elixir of the Giants"] 9206
 /use [nomybuff:"Winterfall Firewater"] 12820
 /use [nomybuff:"Winterfall Firewater"/"Juju Might"] 12460
+/use [nomybuff:"Health II"] 3825
 /use [nomybuff:"Rage of Ages"]  8410
-/use [nomybuff:"Sharpen Blade V"] 12404
-/run PickupInventoryItem(16)
 /use [nomybuff:"Well Fed"] 51720
 /use [nomybuff:"Dreamtonic"] 61423
 ```
