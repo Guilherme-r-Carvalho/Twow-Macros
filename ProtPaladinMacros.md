@@ -14,8 +14,8 @@
 /retarget
 /startattack
 /cast [nocdgcd]Holy Shield
-/cast [nocdgcd]Holy Strike
-/cast [nocdgcd]Consecration
+/cast [nocdgcd,cdgcd:"Holy Shield">1]Holy Strike
+/cast [nocdgcd,cdgcd:"Holy Shield">1]Consecration
 /cast [type:undead,nocdgcd] Exorcism
 ```
 ### Powerfull Self Cleanse 

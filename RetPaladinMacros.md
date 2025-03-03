@@ -7,22 +7,31 @@
  3. [Consumables](#consumables)
 
 ## Rotations
+
+### Repentance
+
+Make sure you name this macro repentance so others work.
+```
+/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
+/cast ?[type:boss] Repentance
+/retarget
+/startattack
+```
+
 ### Auto Attack - Single Target
 **!Only use Quel'dorei Meditation if you are High Elf.**
 
-Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 45%, cast Exorcism on cooldown, Hammer of Wrath when available.
+Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 45%, cast Exorcism on cooldown.
 ```
 #showtooltip
-/script UIErrorsFrame:Hide()
 /retarget
 /startattack
-/cast [mybuff:Zeal<#3/Zeal<7] Crusader Strike
-/cast [mybuff:"Holy Might"<5] Holy Strike
+/cast [mybuff:Zeal<#3/Zeal<7,nocooldown] Crusader Strike
+/cast [mybuff:"Holy Might"<5,nocooldown] Holy Strike
 /cast Crusader Strike
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
-/cast ?[type:boss] Repentance
-/cast [mypower:>45] Consecration
-/cast ?[mypower:<70] Quel'dorei Meditation
+/cast [nocooldown:Repentance,cooldown:"Crusader Strike">1] {Repentance}
+/cast [mypower:>45,cdgcd:"Crusader Strike">1] Consecration
+/cast [mypower:<70,cdgcd:"Crusader Strike">1.2] Quel'dorei Meditation
 /cast [type:undead] Exorcism
 
 ```
@@ -34,7 +43,7 @@ Example to use trinket slot:
 ### Auto Attack - Aoe
 **!Only use Quel'dorei Meditation if you are High Elf.**
 
-Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 15%, cast Holy Wrath on cooldown, Hammer of Wrath when available.
+Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana above 15%, cast Holy Wrath on cooldown.
 ```
 #showtooltip
 /script UIErrorsFrame:Hide()
@@ -44,9 +53,10 @@ Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana abo
 /cast [mybuff:"Holy Might"<5] Holy Strike
 /cast Crusader Strike
 /cast [mypower:>15] Consecration
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
-/cast ?[type:boss] Repentance
-/cast ?[mypower:<70] Quel'dorei Meditation
+/cast [nocooldown:Repentance,cooldown:"Crusader Strike">1] {Repentance}
+/cast [mypower:<70,cdgcd:"Crusader Strike">1.2] Quel'dorei Meditation
+/cast [type:undead] Holy Wrath
+
 ```
 ### Powerfull Self Cleanse 
 
@@ -69,6 +79,7 @@ Seal and Judge Wisdom, Reseal and Judge Command while target has JoW.
 /cast [nocdgcd] Judgement
 /cast [nocdgcd] !Seal of Command
 /cast Judgement
+/cast [type:boss,hp:<20,mypower:>15] Hammer of Wrath
 ```
 ### Mana
 
@@ -92,7 +103,7 @@ Seal and Judge Light, Reseal and Judge Command while target has JoL.
 /cast [nocdgcd] !Seal of Command
 /cast Judgement
 ```
-### Crusader (With Efficiency Variant)
+### Crusader (Down below Efficiency Variant)
 Seal and Judge Crusader, reseal and Judge Command while target has JotC.
 ```
 #showtooltip
