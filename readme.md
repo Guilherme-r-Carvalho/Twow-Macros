@@ -1,5 +1,5 @@
 # Macros... because clicking several buttons is hard and we like to min-max.
-### Make sure you have [CleveRoidMacros](https://github.com/bhhandley/CleveRoidMacros)(Custom functions) and [SuperMacro](https://github.com/Monteo/SuperMacro)(Size extender) installed as they are needed to work.
+### Make sure you have [CleveRoidMacros-Fixes Fork](https://github.com/Guilherme-r-Carvalho/CleveRoidMacros)(Custom functions) and [SuperMacro](https://github.com/Monteo/SuperMacro)(Size extender) installed as they are needed to work.
 #### This are the macros I am currently using, feel free to change them as you like as this should be used as a start up to make your ones. If you have any questions, message me on discord @unlifed.
 ## Index
 1. [WIP](#wip)
