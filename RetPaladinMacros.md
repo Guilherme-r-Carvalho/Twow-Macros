@@ -12,7 +12,7 @@
 
 Make sure you name this macro repentance so others work.
 ```
-/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum", hp:>60] Repentance
+/cast ?[zone:"Ruins of Ahn'Qiraj"/Zul'Gurub/"Molten Core"/"Onyxia's Lair"/"Blackwing Lair"/"Ahn'Qiraj"/"Naxxramas"/"Emerald Sanctum"/"Tower of Karazhan", hp:>60] Repentance
 /cast ?[type:boss] Repentance
 /retarget
 /startattack
@@ -26,13 +26,13 @@ Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana abo
 #showtooltip
 /retarget
 /startattack
-/cast [mybuff:Zeal<#3/Zeal<7,nocooldown] Crusader Strike
-/cast [mybuff:"Holy Might"<5,nocooldown] Holy Strike
+/cast [mybuff:Zeal<#3/Zeal<7] Crusader Strike
+/cast [mybuff:"Holy Might"<5] Holy Strike
+/cast [type:undead,mypower:>15] Exorcism
 /cast Crusader Strike
 /cast [nocooldown:Repentance,cooldown:"Crusader Strike">1] {Repentance}
 /cast [mypower:>45,cdgcd:"Crusader Strike">1] Consecration
 /cast [mypower:<70,cdgcd:"Crusader Strike">1.2] Quel'dorei Meditation
-/cast [type:undead] Exorcism
 
 ```
 
@@ -49,13 +49,13 @@ Stack 3 Zeals, get holy might buff on cooldown, cast consecration while mana abo
 /script UIErrorsFrame:Hide()
 /retarget
 /startattack
+/cast [type:undead,mypower:>15] Holy Wrath
 /cast [mybuff:"Zeal"<#3/"Zeal"<7] Crusader Strike
 /cast [mybuff:"Holy Might"<5] Holy Strike
 /cast Crusader Strike
 /cast [mypower:>15] Consecration
 /cast [nocooldown:Repentance,cooldown:"Crusader Strike">1] {Repentance}
 /cast [mypower:<70,cdgcd:"Crusader Strike">1.2] Quel'dorei Meditation
-/cast [type:undead] Holy Wrath
 
 ```
 ### Powerfull Self Cleanse 
@@ -109,9 +109,10 @@ Seal and Judge Crusader, reseal and Judge Command while target has JotC.
 #showtooltip
 /retarget
 /startattack
-/cast [nodebuff:"Judgement of the Crusader"] !Seal of the Crusader
-/cast [nocdgcd] Judgement
-/cast [nocdgcd] !Seal of Command
+/cast [nodebuff:"Judgement of the Crusader",nocooldown:Judgement] !Seal of the Crusader
+/cast [nocooldown] Judgement
+/cast [nocooldown, cooldown:Judgement] !Seal of Command
+/cast [nomybuff:"Seal of the Crusader"] !Seal of Command
 /cast Judgement
 ```
 **Efficency variant (CrusaderEff)**
@@ -120,6 +121,7 @@ Make sure your Crusader seal macro is named **"Crusader"**
 This will make sure you are not sealing crusader when ur targets are on low health(usually happens when trash clearing) and that even on low mana you will have Command up with **Rank 1** to waste less mana.
 ```
 #showtooltip
+/script UIErrorsFrame:Hide()
 /cast [mybuff:"Righteous Fury"] Righteous Fury
 /retarget
 /startattack
